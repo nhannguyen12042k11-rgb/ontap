@@ -2,8 +2,8 @@
 <html lang="vi">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ÔN TẬP CÔNG NGHỆ 9 - CHƯƠNG I - HKII 2025-2026</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>ÔN TẬP CÔNG NGHỆ 9 - CHƯƠNG I</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         * {
@@ -14,70 +14,31 @@
         }
 
         :root {
-            --primary-aqua: #00e5ff;
-            --primary-dark: #0a192f;
-            --secondary-dark: #112240;
-            --accent-color: #64ffda;
-            --text-light: #e6f1ff;
-            --text-gray: #8892b0;
-            --transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-            --shadow: 0 10px 30px -15px rgba(0, 229, 255, 0.2);
-            --border-radius: 15px;
+            --primary: #2563eb;
+            --primary-dark: #1e40af;
+            --secondary: #10b981;
+            --danger: #ef4444;
+            --warning: #f59e0b;
+            --dark: #1e293b;
+            --light: #f8fafc;
+            --gray: #64748b;
+            --border: #e2e8f0;
+            --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            --radius: 12px;
         }
 
         body {
-            background: linear-gradient(135deg, var(--primary-dark) 0%, #0c2b5e 50%, #0a192f 100%);
-            color: var(--text-light);
+            background-color: #f1f5f9;
+            color: var(--dark);
             min-height: 100vh;
-            overflow-x: hidden;
-            cursor: none;
-            position: relative;
-        }
-
-        body::before {
-            content: '';
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: 
-                radial-gradient(circle at 20% 80%, rgba(0, 229, 255, 0.1) 0%, transparent 40%),
-                radial-gradient(circle at 80% 20%, rgba(100, 255, 218, 0.08) 0%, transparent 40%);
-            z-index: -1;
-            pointer-events: none;
-        }
-
-        .custom-cursor {
-            position: fixed;
-            width: 20px;
-            height: 20px;
-            border-radius: 50%;
-            background-color: var(--primary-aqua);
-            mix-blend-mode: difference;
-            pointer-events: none;
-            z-index: 9999;
-            transform: translate(-50%, -50%);
-            transition: width 0.3s, height 0.3s, background-color 0.3s;
-        }
-
-        .cursor-dot {
-            position: fixed;
-            width: 6px;
-            height: 6px;
-            border-radius: 50%;
-            background-color: white;
-            pointer-events: none;
-            z-index: 10000;
-            transform: translate(-50%, -50%);
-            transition: width 0.2s, height 0.2s;
+            padding: 20px;
+            -webkit-tap-highlight-color: transparent;
+            -webkit-touch-callout: none;
         }
 
         .container {
-            max-width: 1200px;
+            max-width: 100%;
             margin: 0 auto;
-            padding: 20px;
-            opacity: 0.95;
         }
 
         /* Password Screen */
@@ -86,39 +47,39 @@
             flex-direction: column;
             justify-content: center;
             align-items: center;
-            min-height: 100vh;
-            text-align: center;
+            min-height: calc(100vh - 40px);
             padding: 20px;
-            animation: fadeIn 1s ease-out;
         }
 
-        .password-screen h1 {
-            font-size: 2.8rem;
-            margin-bottom: 10px;
-            background: linear-gradient(90deg, var(--primary-aqua), var(--accent-color));
-            -webkit-background-clip: text;
-            background-clip: text;
-            color: transparent;
-            text-shadow: 0 0 20px rgba(0, 229, 255, 0.3);
+        .logo {
+            text-align: center;
+            margin-bottom: 40px;
         }
 
-        .password-screen h2 {
+        .logo i {
+            font-size: 3.5rem;
+            color: var(--primary);
+            margin-bottom: 15px;
+        }
+
+        .logo h1 {
             font-size: 1.8rem;
-            margin-bottom: 30px;
-            color: var(--text-gray);
-            font-weight: 400;
+            color: var(--dark);
+            margin-bottom: 8px;
+        }
+
+        .logo p {
+            color: var(--gray);
+            font-size: 1rem;
         }
 
         .password-box {
-            background-color: rgba(17, 34, 64, 0.7);
-            padding: 40px;
-            border-radius: var(--border-radius);
-            box-shadow: var(--shadow);
-            border: 1px solid rgba(0, 229, 255, 0.2);
-            backdrop-filter: blur(10px);
+            background: white;
+            border-radius: var(--radius);
+            padding: 30px;
             width: 100%;
-            max-width: 500px;
-            animation: slideUp 0.8s ease-out 0.3s both;
+            max-width: 400px;
+            box-shadow: var(--shadow);
         }
 
         .password-input {
@@ -128,458 +89,97 @@
         }
 
         .password-input input {
-            padding: 18px 20px;
+            padding: 16px;
+            border: 2px solid var(--border);
             border-radius: 10px;
-            border: 2px solid rgba(0, 229, 255, 0.3);
-            background-color: rgba(10, 25, 47, 0.7);
-            color: var(--text-light);
-            font-size: 1.1rem;
-            transition: var(--transition);
+            font-size: 1rem;
+            transition: all 0.3s;
         }
 
         .password-input input:focus {
             outline: none;
-            border-color: var(--primary-aqua);
-            box-shadow: 0 0 15px rgba(0, 229, 255, 0.4);
+            border-color: var(--primary);
+            box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
         }
 
-        .password-input button {
-            padding: 18px;
+        .btn {
+            padding: 16px;
             border-radius: 10px;
             border: none;
-            background: linear-gradient(90deg, var(--primary-aqua), #00b8d4);
-            color: var(--primary-dark);
-            font-size: 1.2rem;
+            font-size: 1rem;
             font-weight: 600;
             cursor: pointer;
-            transition: var(--transition);
-            letter-spacing: 1px;
+            transition: all 0.3s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
         }
 
-        .password-input button:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 25px rgba(0, 229, 255, 0.4);
+        .btn-primary {
+            background-color: var(--primary);
+            color: white;
         }
 
-        .password-input button:active {
-            transform: translateY(0);
+        .btn-primary:hover {
+            background-color: var(--primary-dark);
+            transform: translateY(-2px);
         }
 
         .error-message {
-            color: #ff6b6b;
-            margin-top: 15px;
+            color: var(--danger);
             font-size: 0.9rem;
+            text-align: center;
             min-height: 20px;
-            opacity: 0;
-            transition: opacity 0.3s;
+            margin-top: 10px;
         }
 
         /* Main Content */
         .main-content {
             display: none;
-            animation: fadeIn 1s ease-out;
         }
 
+        /* Header */
         .header {
-            text-align: center;
-            padding: 30px 0;
-            margin-bottom: 30px;
-            border-bottom: 1px solid rgba(0, 229, 255, 0.2);
+            background: white;
+            border-radius: var(--radius);
+            padding: 20px;
+            margin-bottom: 20px;
+            box-shadow: var(--shadow);
             position: relative;
         }
 
         .header h1 {
-            font-size: 2.5rem;
-            margin-bottom: 10px;
-            background: linear-gradient(90deg, var(--primary-aqua), var(--accent-color));
-            -webkit-background-clip: text;
-            background-clip: text;
-            color: transparent;
-        }
-
-        .header h2 {
-            font-size: 1.6rem;
-            color: var(--accent-color);
+            font-size: 1.5rem;
+            color: var(--dark);
             margin-bottom: 5px;
         }
 
         .header p {
-            color: var(--text-gray);
-            font-size: 1.2rem;
-        }
-
-        .timer-container {
-            position: absolute;
-            top: 30px;
-            right: 20px;
-            background-color: rgba(17, 34, 64, 0.8);
-            padding: 15px 25px;
-            border-radius: 10px;
-            border: 1px solid rgba(0, 229, 255, 0.3);
-            box-shadow: var(--shadow);
+            color: var(--gray);
+            font-size: 0.95rem;
         }
 
         .timer {
-            font-size: 1.8rem;
-            font-weight: 700;
-            color: var(--primary-aqua);
-            text-shadow: 0 0 10px rgba(0, 229, 255, 0.5);
+            position: absolute;
+            right: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+            background: var(--primary);
+            color: white;
+            padding: 8px 16px;
+            border-radius: 8px;
+            font-weight: 600;
+            font-size: 1.1rem;
         }
 
         .timer.warning {
-            color: #ff9f43;
-            animation: pulse 1s infinite;
+            background-color: var(--warning);
         }
 
         .timer.danger {
-            color: #ff6b6b;
-            animation: pulse 0.5s infinite;
-        }
-
-        /* Exam Content */
-        .exam-content {
-            display: flex;
-            gap: 40px;
-            margin-bottom: 40px;
-        }
-
-        .questions-container {
-            flex: 3;
-        }
-
-        .control-panel {
-            flex: 1;
-            background-color: rgba(17, 34, 64, 0.7);
-            border-radius: var(--border-radius);
-            padding: 25px;
-            box-shadow: var(--shadow);
-            border: 1px solid rgba(0, 229, 255, 0.2);
-            height: fit-content;
-            position: sticky;
-            top: 20px;
-        }
-
-        .question-card {
-            background-color: rgba(17, 34, 64, 0.7);
-            border-radius: var(--border-radius);
-            padding: 30px;
-            margin-bottom: 25px;
-            box-shadow: var(--shadow);
-            border: 1px solid rgba(0, 229, 255, 0.1);
-            transition: var(--transition);
-            transform: translateY(0);
-        }
-
-        .question-card:hover {
-            transform: translateY(-5px);
-            border-color: rgba(0, 229, 255, 0.3);
-            box-shadow: 0 15px 35px rgba(0, 229, 255, 0.15);
-        }
-
-        .question-number {
-            font-size: 1.4rem;
-            color: var(--primary-aqua);
-            margin-bottom: 15px;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-
-        .question-number i {
-            font-size: 1.2rem;
-        }
-
-        .question-text {
-            font-size: 1.2rem;
-            line-height: 1.6;
-            margin-bottom: 25px;
-            color: var(--text-light);
-        }
-
-        .options-container {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 15px;
-        }
-
-        .option {
-            padding: 18px 20px;
-            border-radius: 10px;
-            border: 2px solid rgba(255, 255, 255, 0.1);
-            background-color: rgba(10, 25, 47, 0.6);
-            color: var(--text-light);
-            font-size: 1.1rem;
-            cursor: pointer;
-            transition: var(--transition);
-            display: flex;
-            align-items: center;
-            gap: 15px;
-        }
-
-        .option:hover {
-            background-color: rgba(0, 229, 255, 0.1);
-            border-color: rgba(0, 229, 255, 0.3);
-            transform: translateX(5px);
-        }
-
-        .option.selected {
-            background-color: rgba(0, 229, 255, 0.15);
-            border-color: var(--primary-aqua);
-            color: var(--primary-aqua);
-        }
-
-        .option-letter {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            width: 36px;
-            height: 36px;
-            border-radius: 50%;
-            background-color: rgba(0, 229, 255, 0.1);
-            color: var(--text-light);
-            font-weight: 600;
-            transition: var(--transition);
-        }
-
-        .option.selected .option-letter {
-            background-color: var(--primary-aqua);
-            color: var(--primary-dark);
-        }
-
-        /* Control Panel */
-        .control-title {
-            font-size: 1.4rem;
-            color: var(--primary-aqua);
-            margin-bottom: 20px;
-            text-align: center;
-            padding-bottom: 15px;
-            border-bottom: 1px solid rgba(0, 229, 255, 0.2);
-        }
-
-        .progress-info {
-            margin-bottom: 25px;
-        }
-
-        .progress-bar {
-            height: 10px;
-            background-color: rgba(10, 25, 47, 0.7);
-            border-radius: 5px;
-            margin-bottom: 10px;
-            overflow: hidden;
-        }
-
-        .progress-fill {
-            height: 100%;
-            background: linear-gradient(90deg, var(--primary-aqua), #00b8d4);
-            border-radius: 5px;
-            width: 0%;
-            transition: width 0.8s cubic-bezier(0.22, 0.61, 0.36, 1);
-        }
-
-        .progress-text {
-            display: flex;
-            justify-content: space-between;
-            font-size: 1rem;
-            color: var(--text-gray);
-        }
-
-        .control-buttons {
-            display: flex;
-            flex-direction: column;
-            gap: 15px;
-            margin-bottom: 25px;
-        }
-
-        .control-btn {
-            padding: 16px;
-            border-radius: 10px;
-            border: none;
-            font-size: 1.1rem;
-            font-weight: 600;
-            cursor: pointer;
-            transition: var(--transition);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 10px;
-        }
-
-        .submit-btn {
-            background: linear-gradient(90deg, var(--primary-aqua), #00b8d4);
-            color: var(--primary-dark);
-        }
-
-        .review-btn {
-            background: linear-gradient(90deg, #ff9f43, #ff7b00);
-            color: var(--primary-dark);
-        }
-
-        .reset-btn {
-            background: linear-gradient(90deg, #ff6b6b, #ee5a52);
-            color: var(--primary-dark);
-        }
-
-        .control-btn:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-        }
-
-        .control-btn:active {
-            transform: translateY(0);
-        }
-
-        .quick-nav {
-            display: grid;
-            grid-template-columns: repeat(5, 1fr);
-            gap: 10px;
-        }
-
-        .nav-btn {
-            width: 100%;
-            aspect-ratio: 1;
-            border-radius: 8px;
-            border: 1px solid rgba(0, 229, 255, 0.2);
-            background-color: rgba(10, 25, 47, 0.6);
-            color: var(--text-light);
-            cursor: pointer;
-            transition: var(--transition);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-weight: 600;
-        }
-
-        .nav-btn:hover {
-            background-color: rgba(0, 229, 255, 0.15);
-            transform: scale(1.1);
-        }
-
-        .nav-btn.answered {
-            background-color: rgba(0, 229, 255, 0.3);
-            color: var(--primary-dark);
-            border-color: var(--primary-aqua);
-        }
-
-        /* Review Screen */
-        .review-screen {
-            display: none;
-            animation: fadeIn 1s ease-out;
-        }
-
-        .review-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 30px;
-            padding-bottom: 20px;
-            border-bottom: 1px solid rgba(0, 229, 255, 0.2);
-        }
-
-        .score-container {
-            text-align: center;
-            background-color: rgba(17, 34, 64, 0.7);
-            padding: 25px;
-            border-radius: var(--border-radius);
-            margin-bottom: 30px;
-            border: 1px solid rgba(0, 229, 255, 0.2);
-        }
-
-        .score-title {
-            font-size: 1.8rem;
-            color: var(--primary-aqua);
-            margin-bottom: 15px;
-        }
-
-        .score-value {
-            font-size: 3.5rem;
-            font-weight: 700;
-            color: var(--accent-color);
-            text-shadow: 0 0 15px rgba(100, 255, 218, 0.5);
-        }
-
-        .review-question-card {
-            background-color: rgba(17, 34, 64, 0.7);
-            border-radius: var(--border-radius);
-            padding: 25px;
-            margin-bottom: 25px;
-            border: 1px solid rgba(0, 229, 255, 0.1);
-        }
-
-        .review-question-card.correct {
-            border-left: 5px solid #00d26a;
-        }
-
-        .review-question-card.incorrect {
-            border-left: 5px solid #ff6b6b;
-        }
-
-        .answer-status {
-            display: flex;
-            justify-content: space-between;
-            margin-bottom: 15px;
-            padding-bottom: 10px;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-        }
-
-        .user-answer, .correct-answer {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            font-weight: 600;
-        }
-
-        .user-answer .answer-label {
-            color: #ff9f43;
-        }
-
-        .correct-answer .answer-label {
-            color: #00d26a;
-        }
-
-        .review-option {
-            padding: 15px;
-            border-radius: 8px;
-            margin-bottom: 10px;
-            display: flex;
-            align-items: center;
-            gap: 15px;
-        }
-
-        .review-option.user-selected {
-            background-color: rgba(255, 159, 67, 0.15);
-            border: 1px solid rgba(255, 159, 67, 0.4);
-        }
-
-        .review-option.correct-answer {
-            background-color: rgba(0, 210, 106, 0.15);
-            border: 1px solid rgba(0, 210, 106, 0.4);
-        }
-
-        /* Footer */
-        .footer {
-            text-align: center;
-            padding: 30px 0;
-            margin-top: 40px;
-            border-top: 1px solid rgba(0, 229, 255, 0.2);
-            color: var(--text-gray);
-            font-size: 0.9rem;
-        }
-
-        /* Animations */
-        @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
-        }
-
-        @keyframes slideUp {
-            from { 
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to { 
-                opacity: 1;
-                transform: translateY(0);
-            }
+            background-color: var(--danger);
+            animation: pulse 1s infinite;
         }
 
         @keyframes pulse {
@@ -588,73 +188,350 @@
             100% { opacity: 1; }
         }
 
-        /* Responsive */
-        @media (max-width: 992px) {
-            .exam-content {
+        /* Exam Content */
+        .question-card {
+            background: white;
+            border-radius: var(--radius);
+            padding: 20px;
+            margin-bottom: 15px;
+            box-shadow: var(--shadow);
+        }
+
+        .question-number {
+            color: var(--primary);
+            font-weight: 600;
+            margin-bottom: 15px;
+            font-size: 1.1rem;
+        }
+
+        .question-text {
+            font-size: 1.05rem;
+            line-height: 1.5;
+            margin-bottom: 20px;
+            color: var(--dark);
+        }
+
+        .options-container {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .option {
+            padding: 15px;
+            border: 2px solid var(--border);
+            border-radius: 10px;
+            cursor: pointer;
+            transition: all 0.2s;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .option:hover {
+            border-color: var(--primary);
+            background-color: rgba(37, 99, 235, 0.05);
+        }
+
+        .option.selected {
+            border-color: var(--primary);
+            background-color: rgba(37, 99, 235, 0.1);
+        }
+
+        .option-letter {
+            width: 32px;
+            height: 32px;
+            border-radius: 8px;
+            background-color: var(--border);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 600;
+            flex-shrink: 0;
+        }
+
+        .option.selected .option-letter {
+            background-color: var(--primary);
+            color: white;
+        }
+
+        /* Control Panel */
+        .control-panel {
+            background: white;
+            border-radius: var(--radius);
+            padding: 20px;
+            margin-bottom: 20px;
+            box-shadow: var(--shadow);
+            position: sticky;
+            bottom: 0;
+            z-index: 10;
+        }
+
+        .progress-info {
+            margin-bottom: 20px;
+        }
+
+        .progress-bar {
+            height: 8px;
+            background-color: var(--border);
+            border-radius: 4px;
+            margin-bottom: 10px;
+            overflow: hidden;
+        }
+
+        .progress-fill {
+            height: 100%;
+            background-color: var(--primary);
+            border-radius: 4px;
+            width: 0%;
+            transition: width 0.5s;
+        }
+
+        .progress-text {
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.9rem;
+            color: var(--gray);
+        }
+
+        .control-buttons {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        .control-btn {
+            flex: 1;
+            min-width: 120px;
+            padding: 12px;
+        }
+
+        .btn-success {
+            background-color: var(--secondary);
+            color: white;
+        }
+
+        .btn-success:hover {
+            background-color: #0d9666;
+            transform: translateY(-2px);
+        }
+
+        .btn-danger {
+            background-color: var(--danger);
+            color: white;
+        }
+
+        .btn-danger:hover {
+            background-color: #dc2626;
+            transform: translateY(-2px);
+        }
+
+        /* Review Screen */
+        .review-screen {
+            display: none;
+        }
+
+        .review-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .score-container {
+            background: white;
+            border-radius: var(--radius);
+            padding: 25px;
+            margin-bottom: 20px;
+            text-align: center;
+            box-shadow: var(--shadow);
+        }
+
+        .score-title {
+            font-size: 1.2rem;
+            color: var(--gray);
+            margin-bottom: 10px;
+        }
+
+        .score-value {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--primary);
+        }
+
+        .review-question-card {
+            background: white;
+            border-radius: var(--radius);
+            padding: 20px;
+            margin-bottom: 15px;
+            box-shadow: var(--shadow);
+            border-left: 4px solid var(--border);
+        }
+
+        .review-question-card.correct {
+            border-left-color: var(--secondary);
+        }
+
+        .review-question-card.incorrect {
+            border-left-color: var(--danger);
+        }
+
+        .answer-status {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 15px;
+            flex-wrap: wrap;
+        }
+
+        .user-answer, .correct-answer {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 0.9rem;
+        }
+
+        .user-answer span:first-child {
+            color: var(--warning);
+            font-weight: 600;
+        }
+
+        .correct-answer span:first-child {
+            color: var(--secondary);
+            font-weight: 600;
+        }
+
+        .review-option {
+            padding: 12px;
+            border-radius: 8px;
+            margin-bottom: 8px;
+            border: 2px solid transparent;
+        }
+
+        .review-option.user-selected {
+            background-color: rgba(245, 158, 11, 0.1);
+            border-color: rgba(245, 158, 11, 0.3);
+        }
+
+        .review-option.correct-answer {
+            background-color: rgba(16, 185, 129, 0.1);
+            border-color: rgba(16, 185, 129, 0.3);
+        }
+
+        /* Footer */
+        .footer {
+            text-align: center;
+            padding: 20px;
+            color: var(--gray);
+            font-size: 0.9rem;
+            margin-top: 20px;
+        }
+
+        /* Mobile Optimizations */
+        @media (max-width: 768px) {
+            body {
+                padding: 10px;
+            }
+            
+            .timer {
+                position: static;
+                display: inline-block;
+                margin-top: 15px;
+                transform: none;
+            }
+            
+            .header {
+                text-align: center;
+                padding: 15px;
+            }
+            
+            .control-buttons {
                 flex-direction: column;
             }
             
-            .control-panel {
-                position: static;
-            }
-            
-            .timer-container {
-                position: static;
-                margin-top: 20px;
-                display: inline-block;
-            }
-        }
-
-        @media (max-width: 768px) {
-            .header h1 {
-                font-size: 2rem;
-            }
-            
-            .header h2 {
-                font-size: 1.3rem;
+            .control-btn {
+                min-width: 100%;
             }
             
             .question-card {
-                padding: 20px;
+                padding: 15px;
+            }
+            
+            .option {
+                padding: 12px;
             }
             
             .password-box {
-                padding: 30px 20px;
+                padding: 20px;
             }
             
-            .custom-cursor, .cursor-dot {
-                display: none;
+            .logo i {
+                font-size: 2.5rem;
             }
             
-            body {
-                cursor: default;
+            .logo h1 {
+                font-size: 1.5rem;
             }
+            
+            .score-value {
+                font-size: 2rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .question-text {
+                font-size: 1rem;
+            }
+            
+            .option-text {
+                font-size: 0.95rem;
+            }
+            
+            .btn {
+                padding: 14px;
+            }
+            
+            .review-header {
+                flex-direction: column;
+                gap: 15px;
+                align-items: flex-start;
+            }
+            
+            .answer-status {
+                flex-direction: column;
+                gap: 10px;
+            }
+        }
+
+        /* Prevent text selection */
+        .no-select {
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
         }
     </style>
 </head>
 <body>
-    <!-- Custom Cursor -->
-    <div class="custom-cursor"></div>
-    <div class="cursor-dot"></div>
-
     <!-- Password Screen -->
     <div class="password-screen" id="passwordScreen">
-        <h1><i class="fas fa-graduation-cap"></i> HỆ THỐNG ÔN TẬP</h1>
-        <h2>CÔNG NGHỆ 9 - HỌC KỲ II - NĂM HỌC 2025-2026</h2>
+        <div class="logo">
+            <i class="fas fa-book-open"></i>
+            <h1>HỆ THỐNG ÔN TẬP</h1>
+            <p>CÔNG NGHỆ 9 - HỌC KỲ II - 2025-2026</p>
+        </div>
         
         <div class="password-box">
             <div class="password-input">
-                <input type="password" id="passwordInput" placeholder="Nhập mật khẩu để truy cập hệ thống">
-                <button id="submitPassword">
-                    <i class="fas fa-unlock-alt"></i> MỞ KHÓA HỆ THỐNG
+                <input type="password" id="passwordInput" placeholder="Nhập mật khẩu để truy cập">
+                <button class="btn btn-primary" id="submitPassword">
+                    <i class="fas fa-unlock-alt"></i> MỞ KHÓA
                 </button>
                 <div class="error-message" id="passwordError"></div>
             </div>
         </div>
         
-        <div class="footer" style="margin-top: 50px;">
+        <div class="footer">
             <p>Trường THCS Xuân Thới Thượng</p>
-            <p>Ôn tập Chương I - Công nghệ 9 - Học kỳ II</p>
         </div>
     </div>
 
@@ -662,24 +539,18 @@
     <div class="container main-content" id="mainContent">
         <!-- Header -->
         <div class="header">
-            <h1><i class="fas fa-book-open"></i> ÔN TẬP CHƯƠNG I – CÔNG NGHỆ 9</h1>
-            <h2>HKII – NĂM HỌC 2025–2026</h2>
-            <p>Trường THCS Xuân Thới Thượng</p>
-            
-            <div class="timer-container">
-                <div class="timer" id="timer">20:00</div>
-            </div>
+            <h1>ÔN TẬP CHƯƠNG I – CÔNG NGHỆ 9</h1>
+            <p>HKII – NĂM HỌC 2025–2026 • Trường THCS Xuân Thới Thượng</p>
+            <div class="timer" id="timer">20:00</div>
         </div>
 
         <!-- Exam Content -->
         <div class="exam-content" id="examScreen">
-            <div class="questions-container" id="questionsContainer">
-                <!-- Questions will be dynamically inserted here -->
+            <div id="questionsContainer">
+                <!-- Questions will be loaded here -->
             </div>
 
             <div class="control-panel">
-                <h3 class="control-title"><i class="fas fa-tachometer-alt"></i> BẢNG ĐIỀU KHIỂN</h3>
-                
                 <div class="progress-info">
                     <div class="progress-bar">
                         <div class="progress-fill" id="progressFill"></div>
@@ -691,20 +562,15 @@
                 </div>
                 
                 <div class="control-buttons">
-                    <button class="control-btn submit-btn" id="submitExam">
+                    <button class="btn btn-primary control-btn" id="submitExam">
                         <i class="fas fa-paper-plane"></i> NỘP BÀI
                     </button>
-                    <button class="control-btn review-btn" id="reviewExam" disabled>
+                    <button class="btn btn-success control-btn" id="reviewExam" disabled>
                         <i class="fas fa-chart-bar"></i> XEM KẾT QUẢ
                     </button>
-                    <button class="control-btn reset-btn" id="resetExam">
+                    <button class="btn btn-danger control-btn" id="resetExam">
                         <i class="fas fa-redo"></i> LÀM LẠI
                     </button>
-                </div>
-                
-                <h4 style="margin: 20px 0 10px; color: var(--text-gray);">Chuyển nhanh:</h4>
-                <div class="quick-nav" id="quickNav">
-                    <!-- Navigation buttons will be dynamically inserted here -->
                 </div>
             </div>
         </div>
@@ -712,24 +578,24 @@
         <!-- Review Screen -->
         <div class="review-screen" id="reviewScreen">
             <div class="review-header">
-                <h2><i class="fas fa-chart-bar"></i> KẾT QUẢ BÀI LÀM</h2>
-                <button class="control-btn submit-btn" id="backToExam">
-                    <i class="fas fa-arrow-left"></i> QUAY LẠI BÀI THI
+                <h1>KẾT QUẢ BÀI LÀM</h1>
+                <button class="btn btn-primary" id="backToExam">
+                    <i class="fas fa-arrow-left"></i> QUAY LẠI
                 </button>
             </div>
             
             <div class="score-container">
-                <div class="score-title">ĐIỂM SỐ CỦA BẠN</div>
+                <div class="score-title">ĐIỂM SỐ</div>
                 <div class="score-value" id="scoreValue">0/40</div>
-                <div id="scorePercentage" style="font-size: 1.2rem; color: var(--text-gray); margin-top: 10px;">0%</div>
+                <div id="scorePercentage" style="color: var(--gray); margin-top: 5px;">0%</div>
             </div>
             
             <div id="reviewQuestionsContainer">
-                <!-- Review questions will be dynamically inserted here -->
+                <!-- Review questions will be loaded here -->
             </div>
             
-            <div style="text-align: center; margin-top: 30px;">
-                <button class="control-btn reset-btn" id="resetFromReview">
+            <div style="margin-top: 20px;">
+                <button class="btn btn-danger" id="resetFromReview" style="width: 100%;">
                     <i class="fas fa-redo"></i> LÀM LẠI BÀI THI
                 </button>
             </div>
@@ -737,8 +603,7 @@
 
         <!-- Footer -->
         <div class="footer">
-            <p>Hệ thống ôn tập trực tuyến - Trường THCS Xuân Thới Thượng</p>
-            <p>© 2025-2026 - Công nghệ 9 - Học kỳ II</p>
+            <p>Hệ thống ôn tập trực tuyến • © 2025-2026</p>
         </div>
     </div>
 
@@ -751,58 +616,98 @@
             31: 'D', 32: 'D', 33: 'C', 34: 'A', 35: 'C', 36: 'A', 37: 'A', 38: 'B', 39: 'A', 40: 'A'
         };
 
-        // User answers storage
+        // Questions data
+        const questions = [
+            "Vitamin A thường có trong loại thực phẩm nào?",
+            "Vai trò của vitamin A đối với cơ thể con người là:",
+            "Chất sát khuẩn sinh học phytoncid có ở thực phẩm nào?",
+            "Thiếu Iodine có thể dẫn tới:",
+            "Các cách làm khô bằng năng lượng tự nhiên là:",
+            "Lưu ý khi bảo quản thực phẩm tươi sống là:",
+            "Phương pháp bảo quản TP nào làm biến đổi về cảm quan và thành phần cấu tạo?",
+            "Nếu cơ thể thiếu vitamin B sẽ dẫn đến hệ quả gì?",
+            "Nội dung nào dưới đây không phải là ưu điểm của phương pháp sử dụng các chất sát khuẩn?",
+            "Chất khoáng thường được phân chia thành mấy nhóm?",
+            "Vitamin C có vai trò gì đối với cơ thể con người?",
+            "Chất khoáng kẽm có vai trò gì đối với cơ thể người?",
+            "Mục đích của phương pháp sóng siêu âm là:",
+            "Một trong những vai trò chính của chất xơ đối với cơ thể người là:",
+            "Phụ nữ có thai cho con bú cần tăng cường bổ sung chất khoáng nào sau đây?",
+            "Cách chọn thực phẩm bơ tươi ngon là:",
+            "Khi bảo quản thực phẩm thịt, cá cần có những lưu ý nào?",
+            "Chất dinh dưỡng nào chiếm tỉ lệ cung cấp năng lượng cao nhất cho cơ thể con người?",
+            "Thừa vitamin C có thể dẫn tới:",
+            "Vitamin C có nhiều nhất trong loại thực phẩm nào sau đây?",
+            "Vitamin C thường có trong loại thực phẩm nào?",
+            "Thực phẩm được trộn với muối để hạn chế vi sinh vật phát triển và kéo dài thời gian sử dụng. Đây là phương pháp bảo quản nào sau đây?",
+            "Các tác nhân vật lí trong phương pháp bảo quản thực phẩm là:",
+            "Các phụ gia thực phẩm có tính sát khuẩn là:",
+            "Điều nào không đúng khi nói về bảo quản chất dinh dưỡng trong rau, củ, quả tươi?",
+            "Nội dung nào sau đây không phải là ưu điểm của PP chiếu tia tử ngoại (UV)?",
+            "Nếu cơ thể thiếu chất khoáng calcium sẽ dẫn đến hệ quả gì?",
+            "Thiếu vitamin D có thể gây ra hệ quả gì?",
+            "Chất khoáng sắt thường có trong các loại thực phẩm nào?",
+            "Nhược điểm của phương pháp điều chỉnh độ pH của thực phẩm là:",
+            "Thực phẩm giàu Iodine thường có trong thực phẩm nào?",
+            "Cách bảo quản đậu, hạt khô, gạo là:",
+            "Vitamin A có nhiều nhất trong loại thực phẩm nào sau đây?",
+            "Vitamin C có nhiều nhất trong loại thực phẩm nào sau đây?",
+            "Mục đích của phương pháp phóng xạ ion là:",
+            "Thừa vitamin A có thể dẫn tới:",
+            "Cá được xếp vào hộp kín, sau đó gia nhiệt để tiêu diệt vi sinh vật gây hư hỏng thực phẩm. Đây là phương pháp bảo quản nào sau đây?",
+            "Mục đích của phương pháp chiếu tia tử ngoại (UV) là:",
+            "Vitamin được chia làm mấy nhóm?",
+            "Ý nào dưới đây không đúng khi nói về nước?"
+        ];
+
+        const options = [
+            ["Sữa, gan, lòng đỏ trứng, bơ, phô mai.", "Các loại ngũ cốc, rau, củ, quả, hạt đậu.", "Các loại chanh, cam, bưởi, dưa hấu, ổi,…", "Hải sản."],
+            ["Tham gia quá trình oxy hóa, kích thích quá trình liền sẹo diễn ra nhanh và dự phòng bệnh tim mạch.", "Kích thích ăn uống, góp phần vào sự phát triển của hệ thần kinh.", "Tăng cường quá trình cốt hóa xương.", "Phát triển, tái tạo các tế bào da, niêm mạc và tăng cường miễn dịch."],
+            ["Củ hành, củ tỏi.", "Trứng chim, trứng cá.", "Củ hành, trứng cá.", "Củ tỏi, trong nước mát, các mô."],
+            ["Buồn nôn, đau bụng, tiêu chảy, đắng miệng.", "Suy giáp – bệnh bướu cổ.", "Da đậm màu, máu đông, đau khớp, đau bụng.", "Khát nước, chướng bụng, tăng huyết áp."],
+            ["Năng lượng gió, nước,…", "Năng lượng mặt trời, gió,…", "Năng lượng mặt trời, nước,…", "Năng lượng điện, gió,…"],
+            ["Có thể bảo quản lạnh trong thời gian ngắn và đông lạnh khi chưa cần sử dụng ngay.", "Bảo quản lạnh sau khi giết mổ.", "Đun nấu thịt, cá sau khi cắt, thái.", "Nên để thịt, cá trong túi giấy sau khi cắt, thái."],
+            ["Phương pháp đóng hộp.", "Phương pháp phóng xạ ion.", "Phương pháp ngâm đường.", "Phương pháp bảo quản lạnh."],
+            ["Còi xương ở trẻ em và loãng xương ở người trưởng thành.", "Quáng gà, giảm khả năng miễn dịch.", "Quá trình lão hóa diễn ra nhanh chóng, nguy cơ mắc một số bệnh lí tim mạch.", "Chán ăn, các triệu chứng về thần kinh."],
+            ["Gia tăng sự phát triển của vi sinh vật gây hỏng thực phẩm.", "Kéo dài thời gian sử dụng của thực phẩm.", "Giúp tiêu diệt sự phát triển của vi sinh vật gây hỏng thực phẩm.", "Giúp ngăn ngừa sự phát triển của vi sinh vật gây hỏng thực phẩm."],
+            ["2.", "3.", "4.", "5."],
+            ["Giúp phát triển, tái tạo các tế bào da, niêm mạc và tăng cường cơ thể.", "Kích thích sự phát triển của hệ xương.", "Góp phần vào sự phát triển của hệ thần kinh", "Kích thích quá trình liền sẹo diễn ra nhanh."],
+            ["Giúp điều hòa đường huyết, hỗ trợ hoạt động của cơ bắp, bộ não tim mạch.", "Làm cho xương và răng chắc khỏe.", "Tăng cường hệ miễn dịch, phát triển hệ thống thần kinh trung ương.", "Là thành phần của enzyme hoặc xúc tác cho phản ứng sinh hóa trong cơ thể."],
+            ["Phá hủy sinh vật.", "Để chống mốc, vi khuẩn trong không khí, trên dụng cụ, bề mặt thực phẩm.", "Làm rối loạn các tính chất sinh vật của tế bào vi khuẩn.", "Làm mất khả năng sinh sản của vi sinh vật."],
+            ["Là môi trường cho các phản ứng chuyển hóa xảy ra trong cơ thể.", "Chuyển hóa và trao đổi chất trong tế bào và giữa tế bào với môi trường.", "Hấp thụ những chất có hại trong đường tiêu hóa.", "Tham gia cấu tạo tế bào và các mô của cơ thể."],
+            ["Kẽm.", "Natri.", "Iodine.", "Sắt."],
+            ["Bơ màu vàng đậm, vị ngậy, chảy nước, không có mùi lạ, bề mặt mịn màng.", "Bơ màu vàng tươi, vị ngậy, không chảy nước, không có mùi lạ, bề mặt sần sùi.", "Bơ màu vàng đậm, vị ngậy, không chảy nước, bề mặt mịn màng, có mùi thơm đặc trưng.", "Bơ màu vàng tươi, vị ngậy, không chảy nước, không có mùi lạ, bề mặt mịn màng, có mùi thơm đặc trưng."],
+            ["Bảo quản thịt, cá ở nơi khô, ráo.", "Không ngâm rửa thịt, cá sau khi cắt, thái.", "Bảo quản thịt, cá ở nhiệt độ thấp (trong tủ lạnh hoặc ngăn đông).", "Nên để thịt, cá trong túi giấy sau khi cắt, thái."],
+            ["Protein.", "Lipid.", "Carbohydrate.", "Vitamin."],
+            ["Xanh xao, tăng tiết mồ hôi, khó thở, cứng cơ, phù, thở không đều, giảm vận động hoặc hoạt động, sưng mí mắt hoặc đỏ da.", "Nhức đầu, ngứa ngáy, phát ban, gây tê liệt hay yếu chân tay, co mặt.", "Rối loạn tiêu hóa, loét dạ dày, tá tràng, đau đầu, mất ngủ, viêm bàng quang, tiêu chảy, tăng tạo sỏi thận, gây bệnh gout.", "Gây hiện tượng hoảng hốt, đau đầu, mệt mỏi, tê thần kinh cơ bắp, tim đập nhanh, chuột rút, phù nề."],
+            ["Quả ổi.", "Rau cải.", "Cá."],
+            ["Các loại rau và quả: chanh, cam, bưởi, dưa hấu, bắp cải, cà chua.", "Các loại ngũ cốc, rau, củ, quả, hạt đậu.", "Rau có màu xanh đậm hoặc vàng, quả có màu vàng: rau muống, rau ngót, cải xanh, rau dền, bí đỏ, cà rốt, xoài đặc.", "Sữa, dầu gan cá, lòng đỏ trứng, bơ."],
+            ["Phương pháp đóng hộp.", "Phương pháp tiệt trùng.", "Phương pháp làm khô tự nhiên.", "Phương pháp ướp muối."],
+            ["Bảo quản lạnh.", "Sấy khô, phơi nắng.", "Đóng hộp, bao gói kín.", "Tia tử ngoại, sóng siêu âm, chiếu xạ."],
+            ["Sorbic acid, kali nitrat, propionic acid,…", "Sorbic acid, sodium benzoate, propionic acid.", "Sodium benzoate, propionic acid,…", "Sorbic acid, glucose,…"],
+            ["Rửa rau thật sạch, chỉ nên cắt, thái sau khi rửa, không để rau khô héo.", "Rau, củ, quả ăn sống nên gọt vỏ trước khi ăn.", "Nên để trong hộp, lọ kín,…", "Nên sơ chế sạch sẽ và bảo quản lạnh trong thời gian ngắn."],
+            ["Không làm ảnh hưởng nhiều đến chất lượng của thực phẩm.", "Được áp dụng rộng rãi trong sản xuất công nghiệp.", "Làm thay đổi thành phần dinh dưỡng và mùi vị ban đầu của thực phẩm.", "Đem lại hiệu quả cao."],
+            ["Thiếu máu.", "Tăng huyết áp.", "Còi xương ở trẻ em và loãng xương ở người trưởng thành.", "Dẫn đến bệnh bướu cổ."],
+            ["Còi xương ở trẻ em và loãng xương ở người trưởng thành.", "Thiếu máu hồng cầu và bệnh thần kinh ngoại vi.", "Thoái hóa các neuron thần kinh.", "Viêm lợi, phát ban."],
+            ["Muối, các loại gia vị.", "Rau lá màu xanh đậm.", "Các loại thịt, hải sản, lòng đỏ trứng, rau cải.", "Gan, thịt động vật bốn chân và trứng."],
+            ["Đảm bảo chất lượng sản phẩm.", "Gia tăng sự phát triển của các vi sinh vật gây bệnh.", "Thời gian bảo quản không dài, ảnh hưởng đến hương vị, giá trị dinh dưỡng thực phẩm.", "Thời gian bảo quản dài, làm giảm giá trị dinh dưỡng của thực phẩm."],
+            ["Gạo, ngô, cá mực, rau bắp cải.", "Rau bắp cải, cá ngừ, tảo, đậu lầy.", "Súp lơ xanh, cá mực, trứng, cá ngừ.", "Rau bắp cải, cá mực, rong biển, sữa, tôm."],
+            ["Bảo quản trong các túi đông lạnh.", "Sơ chế sạch sẽ và bảo quản lạnh.", "Khử khuẩn bằng các tác nhân vật lí.", "Để trong hộp, lọ kín, nơi khô ráo, mát mẻ."],
+            ["Quả táo.", "Hải sản.", "Rau dền.", "Hạt đậu."],
+            ["Quả ổi.", "Rau cải.", "Cá.", "Gạo."],
+            ["Phá hủy sinh vật.", "Để chống mốc, vi khuẩn trong không khí, trên dụng cụ, bề mặt thực phẩm.", "Làm rối loạn các tính chất sinh vật của tế bào vi khuẩn, làm mất khả năng sinh sản của vi sinh vật.", "Tăng thời gian bảo quản thực phẩm."],
+            ["Đau đầu, buồn nôn, chán ăn, khô da, niêm mạc, đau xương khớp, tổn thương gan.", "Rối loạn tiêu hóa, loét dạ dày, tá tràng, đau đầu, mất ngủ, viêm bàng quang.", "Làm loãng máu và dẫn đến chảy máu, nguy cơ gây tử vong.", "Đau cơ, đau xương, mạch máu bị vôi hóa."],
+            ["Phương pháp đóng hộp.", "Phương pháp tiệt trùng.", "Phương pháp làm khô tự nhiên.", "Phương pháp ướp muối."],
+            ["Phá hủy sinh vật.", "Để chống mốc, vi khuẩn trong không khí, trên dụng cụ, bề mặt thực phẩm.", "Làm rối loạn các tính chất sinh vật của tế bào vi khuẩn.", "Làm mất khả năng sinh sản của vi sinh vật."],
+            ["2.", "3.", "4.", "5."],
+            ["Có thể cung cấp nước cho cơ thể từ việc ăn các loại thực phẩm là thịt đỏ, hải sản.", "Là thành phần quan trọng của cơ thể sinh vật cũng như con người.", "Nước chiếm khoảng 74% trọng lượng cơ thể của trẻ sơ sinh.", "Nước chiếm khoảng 55–60% trọng lượng cơ thể người trưởng thành nam giới."]
+        ];
+
+        // Application state
         let userAnswers = {};
         let examSubmitted = false;
         let timerInterval;
-        let timeLeft = 20 * 60; // 20 minutes in seconds
-
-        // Custom cursor
-        const customCursor = document.querySelector('.custom-cursor');
-        const cursorDot = document.querySelector('.cursor-dot');
-
-        document.addEventListener('mousemove', (e) => {
-            customCursor.style.left = e.clientX + 'px';
-            customCursor.style.top = e.clientY + 'px';
-            
-            setTimeout(() => {
-                cursorDot.style.left = e.clientX + 'px';
-                cursorDot.style.top = e.clientY + 'px';
-            }, 50);
-        });
-
-        document.addEventListener('mousedown', () => {
-            customCursor.style.width = '15px';
-            customCursor.style.height = '15px';
-            cursorDot.style.width = '4px';
-            cursorDot.style.height = '4px';
-        });
-
-        document.addEventListener('mouseup', () => {
-            customCursor.style.width = '20px';
-            customCursor.style.height = '20px';
-            cursorDot.style.width = '6px';
-            cursorDot.style.height = '6px';
-        });
-
-        // Hover effects for interactive elements
-        document.addEventListener('DOMContentLoaded', () => {
-            const interactiveElements = document.querySelectorAll('button, .option, .nav-btn');
-            
-            interactiveElements.forEach(element => {
-                element.addEventListener('mouseenter', () => {
-                    customCursor.style.width = '30px';
-                    customCursor.style.height = '30px';
-                    customCursor.style.backgroundColor = '#ff9f43';
-                });
-                
-                element.addEventListener('mouseleave', () => {
-                    customCursor.style.width = '20px';
-                    customCursor.style.height = '20px';
-                    customCursor.style.backgroundColor = '#00e5ff';
-                });
-            });
-        });
+        let timeLeft = 20 * 60; // 20 minutes
 
         // Password system
         const passwordScreen = document.getElementById('passwordScreen');
@@ -821,95 +726,48 @@
             const enteredPassword = passwordInput.value.trim();
             
             if (enteredPassword === correctPassword) {
-                // Correct password
-                passwordError.style.opacity = '0';
+                passwordError.textContent = '';
                 passwordScreen.style.display = 'none';
                 mainContent.style.display = 'block';
-                
-                // Initialize exam
                 initializeExam();
                 startTimer();
             } else {
-                // Incorrect password
                 passwordError.textContent = 'Mật khẩu không đúng. Vui lòng thử lại.';
-                passwordError.style.opacity = '1';
                 passwordInput.value = '';
                 passwordInput.focus();
-                
-                // Shake animation
-                passwordInput.style.animation = 'none';
-                setTimeout(() => {
-                    passwordInput.style.animation = 'shake 0.5s';
-                }, 10);
             }
         }
-
-        // Shake animation for wrong password
-        const style = document.createElement('style');
-        style.textContent = `
-            @keyframes shake {
-                0%, 100% { transform: translateX(0); }
-                10%, 30%, 50%, 70%, 90% { transform: translateX(-5px); }
-                20%, 40%, 60%, 80% { transform: translateX(5px); }
-            }
-        `;
-        document.head.appendChild(style);
 
         // Initialize exam
         function initializeExam() {
             const questionsContainer = document.getElementById('questionsContainer');
-            const quickNav = document.getElementById('quickNav');
-            
-            // Clear containers
             questionsContainer.innerHTML = '';
-            quickNav.innerHTML = '';
             
-            // Reset user answers
             userAnswers = {};
             examSubmitted = false;
             
-            // Generate questions from content
             for (let i = 1; i <= 40; i++) {
-                // Create question card
                 const questionCard = document.createElement('div');
                 questionCard.className = 'question-card';
                 questionCard.id = `question-${i}`;
                 
-                // Get question data from content (simplified - in real app you would parse the content)
-                const questionData = getQuestionData(i);
-                
                 questionCard.innerHTML = `
-                    <div class="question-number">
-                        <i class="fas fa-question-circle"></i>
-                        Câu ${i}:
-                    </div>
-                    <div class="question-text">${questionData.question}</div>
+                    <div class="question-number">Câu ${i}:</div>
+                    <div class="question-text">${questions[i-1]}</div>
                     <div class="options-container">
-                        ${questionData.options.map((option, index) => {
-                            const letter = String.fromCharCode(65 + index); // A, B, C, D
-                            return `
-                                <div class="option" data-question="${i}" data-option="${letter}">
-                                    <div class="option-letter">${letter}</div>
-                                    <div class="option-text">${option}</div>
-                                </div>
-                            `;
-                        }).join('')}
+                        ${['A', 'B', 'C', 'D'].map((letter, index) => `
+                            <div class="option" data-question="${i}" data-option="${letter}">
+                                <div class="option-letter">${letter}</div>
+                                <div class="option-text">${options[i-1][index]}</div>
+                            </div>
+                        `).join('')}
                     </div>
                 `;
                 
                 questionsContainer.appendChild(questionCard);
-                
-                // Create quick nav button
-                const navBtn = document.createElement('button');
-                navBtn.className = 'nav-btn';
-                navBtn.textContent = i;
-                navBtn.addEventListener('click', () => {
-                    document.getElementById(`question-${i}`).scrollIntoView({ behavior: 'smooth' });
-                });
-                quickNav.appendChild(navBtn);
             }
             
-            // Add event listeners to options
+            // Add click events to options
             document.querySelectorAll('.option').forEach(option => {
                 option.addEventListener('click', function() {
                     if (examSubmitted) return;
@@ -917,129 +775,24 @@
                     const questionNum = parseInt(this.getAttribute('data-question'));
                     const selectedOption = this.getAttribute('data-option');
                     
-                    // Update user answer
                     userAnswers[questionNum] = selectedOption;
                     
-                    // Update UI for this question
+                    // Update UI
                     const questionCard = document.getElementById(`question-${questionNum}`);
                     questionCard.querySelectorAll('.option').forEach(opt => {
                         opt.classList.remove('selected');
                     });
                     this.classList.add('selected');
                     
-                    // Update nav button
-                    const navBtn = document.querySelector(`.nav-btn:nth-child(${questionNum})`);
-                    navBtn.classList.add('answered');
-                    
-                    // Update progress
                     updateProgress();
                 });
             });
             
-            // Initialize progress
             updateProgress();
-            
-            // Enable/disable review button
             document.getElementById('reviewExam').disabled = true;
         }
 
-        // Get question data (simplified - in a real app you would parse the actual content)
-        function getQuestionData(questionNum) {
-            // This is a simplified representation
-            // In a real app, you would parse the actual question content
-            const questions = [
-                "Vitamin A thường có trong loại thực phẩm nào?",
-                "Vai trò của vitamin A đối với cơ thể con người là:",
-                "Chất sát khuẩn sinh học phytoncid có ở thực phẩm nào?",
-                "Thiếu Iodine có thể dẫn tới:",
-                "Các cách làm khô bằng năng lượng tự nhiên là:",
-                "Lưu ý khi bảo quản thực phẩm tươi sống là:",
-                "Phương pháp bảo quản TP nào làm biến đổi về cảm quan và thành phần cấu tạo?",
-                "Nếu cơ thể thiếu vitamin B sẽ dẫn đến hệ quả gì?",
-                "Nội dung nào dưới đây không phải là ưu điểm của phương pháp sử dụng các chất sát khuẩn?",
-                "Chất khoáng thường được phân chia thành mấy nhóm?",
-                "Vitamin C có vai trò gì đối với cơ thể con người?",
-                "Chất khoáng kẽm có vai trò gì đối với cơ thể người?",
-                "Mục đích của phương pháp sóng siêu âm là:",
-                "Một trong những vai trò chính của chất xơ đối với cơ thể người là:",
-                "Phụ nữ có thai cho con bú cần tăng cường bổ sung chất khoáng nào sau đây?",
-                "Cách chọn thực phẩm bơ tươi ngon là:",
-                "Khi bảo quản thực phẩm thịt, cá cần có những lưu ý nào?",
-                "Chất dinh dưỡng nào chiếm tỉ lệ cung cấp năng lượng cao nhất cho cơ thể con người?",
-                "Thừa vitamin C có thể dẫn tới:",
-                "Vitamin C có nhiều nhất trong loại thực phẩm nào sau đây?",
-                "Vitamin C thường có trong loại thực phẩm nào?",
-                "Thực phẩm được trộn với muối để hạn chế vi sinh vật phát triển và kéo dài thời gian sử dụng. Đây là phương pháp bảo quản nào sau đây?",
-                "Các tác nhân vật lí trong phương pháp bảo quản thực phẩm là:",
-                "Các phụ gia thực phẩm có tính sát khuẩn là:",
-                "Điều nào không đúng khi nói về bảo quản chất dinh dưỡng trong rau, củ, quả tươi?",
-                "Nội dung nào sau đây không phải là ưu điểm của PP chiếu tia tử ngoại (UV)?",
-                "Nếu cơ thể thiếu chất khoáng calcium sẽ dẫn đến hệ quả gì?",
-                "Thiếu vitamin D có thể gây ra hệ quả gì?",
-                "Chất khoáng sắt thường có trong các loại thực phẩm nào?",
-                "Nhược điểm của phương pháp điều chỉnh độ pH của thực phẩm là:",
-                "Thực phẩm giàu Iodine thường có trong thực phẩm nào?",
-                "Cách bảo quản đậu, hạt khô, gạo là:",
-                "Vitamin A có nhiều nhất trong loại thực phẩm nào sau đây?",
-                "Vitamin C có nhiều nhất trong loại thực phẩm nào sau đây?",
-                "Mục đích của phương pháp phóng xạ ion là:",
-                "Thừa vitamin A có thể dẫn tới:",
-                "Cá được xếp vào hộp kín, sau đó gia nhiệt để tiêu diệt vi sinh vật gây hư hỏng thực phẩm. Đây là phương pháp bảo quản nào sau đây?",
-                "Mục đích của phương pháp chiếu tia tử ngoại (UV) là:",
-                "Vitamin được chia làm mấy nhóm?",
-                "Ý nào dưới đây không đúng khi nói về nước?"
-            ];
-            
-            const options = [
-                ["A. Sữa, gan, lòng đỏ trứng, bơ, phô mai.", "B. Các loại ngũ cốc, rau, củ, quả, hạt đậu.", "C. Các loại chanh, cam, bưởi, dưa hấu, ổi,…", "D. Hải sản."],
-                ["A. Tham gia quá trình oxy hóa, kích thích quá trình liền sẹo diễn ra nhanh và dự phòng bệnh tim mạch.", "B. Kích thích ăn uống, góp phần vào sự phát triển của hệ thần kinh.", "C. Tăng cường quá trình cốt hóa xương.", "D. Phát triển, tái tạo các tế bào da, niêm mạc và tăng cường miễn dịch."],
-                ["A. Củ hành, củ tỏi.", "B. Trứng chim, trứng cá.", "C. Củ hành, trứng cá.", "D. Củ tỏi, trong nước mát, các mô."],
-                ["A. Buồn nôn, đau bụng, tiêu chảy, đắng miệng.", "B. Suy giáp – bệnh bướu cổ.", "C. Da đậm màu, máu đông, đau khớp, đau bụng.", "D. Khát nước, chướng bụng, tăng huyết áp."],
-                ["A. Năng lượng gió, nước,…", "B. Năng lượng mặt trời, gió,…", "C. Năng lượng mặt trời, nước,…", "D. Năng lượng điện, gió,…"],
-                ["A. Có thể bảo quản lạnh trong thời gian ngắn và đông lạnh khi chưa cần sử dụng ngay.", "B. Bảo quản lạnh sau khi giết mổ.", "C. Đun nấu thịt, cá sau khi cắt, thái.", "D. Nên để thịt, cá trong túi giấy sau khi cắt, thái."],
-                ["A. Phương pháp đóng hộp.", "B. Phương pháp phóng xạ ion.", "C. Phương pháp ngâm đường.", "D. Phương pháp bảo quản lạnh."],
-                ["A. Còi xương ở trẻ em và loãng xương ở người trưởng thành.", "B. Quáng gà, giảm khả năng miễn dịch.", "C. Quá trình lão hóa diễn ra nhanh chóng, nguy cơ mắc một số bệnh lí tim mạch.", "D. Chán ăn, các triệu chứng về thần kinh."],
-                ["A. Gia tăng sự phát triển của vi sinh vật gây hỏng thực phẩm.", "B. Kéo dài thời gian sử dụng của thực phẩm.", "C. Giúp tiêu diệt sự phát triển của vi sinh vật gây hỏng thực phẩm.", "D. Giúp ngăn ngừa sự phát triển của vi sinh vật gây hỏng thực phẩm."],
-                ["A. 2.", "B. 3.", "C. 4.", "D. 5."],
-                ["A. Giúp phát triển, tái tạo các tế bào da, niêm mạc và tăng cường cơ thể.", "B. Kích thích sự phát triển của hệ xương.", "C. Góp phần vào sự phát triển của hệ thần kinh", "D. Kích thích quá trình liền sẹo diễn ra nhanh."],
-                ["A. Giúp điều hòa đường huyết, hỗ trợ hoạt động của cơ bắp, bộ não tim mạch.", "B. Làm cho xương và răng chắc khỏe.", "C. Tăng cường hệ miễn dịch, phát triển hệ thống thần kinh trung ương.", "D. Là thành phần của enzyme hoặc xúc tác cho phản ứng sinh hóa trong cơ thể."],
-                ["A. Phá hủy sinh vật.", "B. Để chống mốc, vi khuẩn trong không khí, trên dụng cụ, bề mặt thực phẩm.", "C. Làm rối loạn các tính chất sinh vật của tế bào vi khuẩn.", "D. Làm mất khả năng sinh sản của vi sinh vật."],
-                ["A. Là môi trường cho các phản ứng chuyển hóa xảy ra trong cơ thể.", "B. Chuyển hóa và trao đổi chất trong tế bào và giữa tế bào với môi trường.", "C. Hấp thụ những chất có hại trong đường tiêu hóa.", "D. Tham gia cấu tạo tế bào và các mô của cơ thể."],
-                ["A. Kẽm.", "B. Natri.", "C. Iodine.", "D. Sắt."],
-                ["A. Bơ màu vàng đậm, vị ngậy, chảy nước, không có mùi lạ, bề mặt mịn màng.", "B. Bơ màu vàng tươi, vị ngậy, không chảy nước, không có mùi lạ, bề mặt sần sùi.", "C. Bơ màu vàng đậm, vị ngậy, không chảy nước, bề mặt mịn màng, có mùi thơm đặc trưng.", "D. Bơ màu vàng tươi, vị ngậy, không chảy nước, không có mùi lạ, bề mặt mịn màng, có mùi thơm đặc trưng."],
-                ["A. Bảo quản thịt, cá ở nơi khô, ráo.", "B. Không ngâm rửa thịt, cá sau khi cắt, thái.", "C. Bảo quản thịt, cá ở nhiệt độ thấp (trong tủ lạnh hoặc ngăn đông).", "D. Nên để thịt, cá trong túi giấy sau khi cắt, thái."],
-                ["A. Protein.", "B. Lipid.", "C. Carbohydrate.", "D. Vitamin."],
-                ["A. Xanh xao, tăng tiết mồ hôi, khó thở, cứng cơ, phù, thở không đều, giảm vận động hoặc hoạt động, sưng mí mắt hoặc đỏ da.", "B. Nhức đầu, ngứa ngáy, phát ban, gây tê liệt hay yếu chân tay, co mặt.", "C. Rối loạn tiêu hóa, loét dạ dày, tá tràng, đau đầu, mất ngủ, viêm bàng quang, tiêu chảy, tăng tạo sỏi thận, gây bệnh gout.", "D. Gây hiện tượng hoảng hốt, đau đầu, mệt mỏi, tê thần kinh cơ bắp, tim đập nhanh, chuột rút, phù nề."],
-                ["A. Quả ổi.", "B. Rau cải.", "C. Cá."],
-                ["A. Các loại rau và quả: chanh, cam, bưởi, dưa hấu, bắp cải, cà chua.", "B. Các loại ngũ cốc, rau, củ, quả, hạt đậu.", "C. Rau có màu xanh đậm hoặc vàng, quả có màu vàng: rau muống, rau ngót, cải xanh, rau dền, bí đỏ, cà rốt, xoài đặc.", "D. Sữa, dầu gan cá, lòng đỏ trứng, bơ."],
-                ["A. Phương pháp đóng hộp.", "B. Phương pháp tiệt trùng.", "C. Phương pháp làm khô tự nhiên.", "D. Phương pháp ướp muối."],
-                ["A. Bảo quản lạnh.", "B. Sấy khô, phơi nắng.", "C. Đóng hộp, bao gói kín.", "D. Tia tử ngoại, sóng siêu âm, chiếu xạ."],
-                ["A. Sorbic acid, kali nitrat, propionic acid,…", "B. Sorbic acid, sodium benzoate, propionic acid.", "C. Sodium benzoate, propionic acid,…", "D. Sorbic acid, glucose,…"],
-                ["A. Rửa rau thật sạch, chỉ nên cắt, thái sau khi rửa, không để rau khô héo.", "B. Rau, củ, quả ăn sống nên gọt vỏ trước khi ăn.", "C. Nên để trong hộp, lọ kín,…", "D. Nên sơ chế sạch sẽ và bảo quản lạnh trong thời gian ngắn."],
-                ["A. Không làm ảnh hưởng nhiều đến chất lượng của thực phẩm.", "B. Được áp dụng rộng rãi trong sản xuất công nghiệp.", "C. Làm thay đổi thành phần dinh dưỡng và mùi vị ban đầu của thực phẩm.", "D. Đem lại hiệu quả cao."],
-                ["A. Thiếu máu.", "B. Tăng huyết áp.", "C. Còi xương ở trẻ em và loãng xương ở người trưởng thành.", "D. Dẫn đến bệnh bướu cổ."],
-                ["A. Còi xương ở trẻ em và loãng xương ở người trưởng thành.", "B. Thiếu máu hồng cầu và bệnh thần kinh ngoại vi.", "C. Thoái hóa các neuron thần kinh.", "D. Viêm lợi, phát ban."],
-                ["A. Muối, các loại gia vị.", "B. Rau lá màu xanh đậm.", "C. Các loại thịt, hải sản, lòng đỏ trứng, rau cải.", "D. Gan, thịt động vật bốn chân và trứng."],
-                ["A. Đảm bảo chất lượng sản phẩm.", "B. Gia tăng sự phát triển của các vi sinh vật gây bệnh.", "C. Thời gian bảo quản không dài, ảnh hưởng đến hương vị, giá trị dinh dưỡng thực phẩm.", "D. Thời gian bảo quản dài, làm giảm giá trị dinh dưỡng của thực phẩm."],
-                ["A. Gạo, ngô, cá mực, rau bắp cải.", "B. Rau bắp cải, cá ngừ, tảo, đậu lầy.", "C. Súp lơ xanh, cá mực, trứng, cá ngừ.", "D. Rau bắp cải, cá mực, rong biển, sữa, tôm."],
-                ["A. Bảo quản trong các túi đông lạnh.", "B. Sơ chế sạch sẽ và bảo quản lạnh.", "C. Khử khuẩn bằng các tác nhân vật lí.", "D. Để trong hộp, lọ kín, nơi khô ráo, mát mẻ."],
-                ["A. Quả táo.", "B. Hải sản.", "C. Rau dền.", "D. Hạt đậu."],
-                ["A. Quả ổi.", "B. Rau cải.", "C. Cá.", "D. Gạo."],
-                ["A. Phá hủy sinh vật.", "B. Để chống mốc, vi khuẩn trong không khí, trên dụng cụ, bề mặt thực phẩm.", "C. Làm rối loạn các tính chất sinh vật của tế bào vi khuẩn, làm mất khả năng sinh sản của vi sinh vật.", "D. Tăng thời gian bảo quản thực phẩm."],
-                ["A. Đau đầu, buồn nôn, chán ăn, khô da, niêm mạc, đau xương khớp, tổn thương gan.", "B. Rối loạn tiêu hóa, loét dạ dày, tá tràng, đau đầu, mất ngủ, viêm bàng quang.", "C. Làm loãng máu và dẫn đến chảy máu, nguy cơ gây tử vong.", "D. Đau cơ, đau xương, mạch máu bị vôi hóa."],
-                ["A. Phương pháp đóng hộp.", "B. Phương pháp tiệt trùng.", "C. Phương pháp làm khô tự nhiên.", "D. Phương pháp ướp muối."],
-                ["A. Phá hủy sinh vật.", "B. Để chống mốc, vi khuẩn trong không khí, trên dụng cụ, bề mặt thực phẩm.", "C. Làm rối loạn các tính chất sinh vật của tế bào vi khuẩn.", "D. Làm mất khả năng sinh sản của vi sinh vật."],
-                ["A. 2.", "B. 3.", "C. 4.", "D. 5."],
-                ["A. Có thể cung cấp nước cho cơ thể từ việc ăn các loại thực phẩm là thịt đỏ, hải sản.", "B. Là thành phần quan trọng của cơ thể sinh vật cũng như con người.", "C. Nước chiếm khoảng 74% trọng lượng cơ thể của trẻ sơ sinh.", "D. Nước chiếm khoảng 55–60% trọng lượng cơ thể người trưởng thành nam giới."]
-            ];
-            
-            return {
-                question: questions[questionNum - 1] || `Câu ${questionNum}`,
-                options: options[questionNum - 1] || ["A. Option A", "B. Option B", "C. Option C", "D. Option D"]
-            };
-        }
-
-        // Update progress
+        // Progress tracking
         function updateProgress() {
             const answeredCount = Object.keys(userAnswers).length;
             const progressPercent = Math.round((answeredCount / 40) * 100);
@@ -1048,7 +801,6 @@
             document.getElementById('progressPercent').textContent = `${progressPercent}%`;
             document.getElementById('progressFill').style.width = `${progressPercent}%`;
             
-            // Enable review button if all questions are answered
             if (answeredCount === 40 && !examSubmitted) {
                 document.getElementById('reviewExam').disabled = false;
             }
@@ -1077,12 +829,11 @@
             
             timerElement.textContent = `${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
             
-            // Add warning classes
             timerElement.classList.remove('warning', 'danger');
-            if (timeLeft <= 5 * 60) { // 5 minutes left
+            if (timeLeft <= 5 * 60) {
                 timerElement.classList.add('warning');
             }
-            if (timeLeft <= 2 * 60) { // 2 minutes left
+            if (timeLeft <= 2 * 60) {
                 timerElement.classList.remove('warning');
                 timerElement.classList.add('danger');
             }
@@ -1093,7 +844,7 @@
         
         function submitExam() {
             if (Object.keys(userAnswers).length < 40) {
-                if (!confirm(`Bạn mới trả lời ${Object.keys(userAnswers).length}/40 câu. Bạn có chắc chắn muốn nộp bài không?`)) {
+                if (!confirm(`Bạn mới trả lời ${Object.keys(userAnswers).length}/40 câu. Nộp bài ngay?`)) {
                     return;
                 }
             }
@@ -1101,7 +852,6 @@
             examSubmitted = true;
             clearInterval(timerInterval);
             
-            // Calculate score
             let score = 0;
             for (let i = 1; i <= 40; i++) {
                 if (userAnswers[i] === correctAnswers[i]) {
@@ -1109,26 +859,22 @@
                 }
             }
             
-            // Show review screen
             showReviewScreen(score);
         }
 
-        // Show review screen
+        // Review screen
         function showReviewScreen(score) {
             document.getElementById('examScreen').style.display = 'none';
             document.getElementById('reviewScreen').style.display = 'block';
             
-            // Update score
             const scorePercentage = Math.round((score / 40) * 100);
             document.getElementById('scoreValue').textContent = `${score}/40`;
             document.getElementById('scorePercentage').textContent = `Tỉ lệ đúng: ${scorePercentage}%`;
             
-            // Generate review questions
             const reviewContainer = document.getElementById('reviewQuestionsContainer');
             reviewContainer.innerHTML = '';
             
             for (let i = 1; i <= 40; i++) {
-                const questionData = getQuestionData(i);
                 const userAnswer = userAnswers[i] || 'Chưa trả lời';
                 const correctAnswer = correctAnswers[i];
                 const isCorrect = userAnswer === correctAnswer;
@@ -1137,32 +883,28 @@
                 reviewCard.className = `review-question-card ${isCorrect ? 'correct' : 'incorrect'}`;
                 
                 reviewCard.innerHTML = `
+                    <div class="question-number">Câu ${i}:</div>
+                    <div class="question-text">${questions[i-1]}</div>
                     <div class="answer-status">
                         <div class="user-answer">
-                            <span class="answer-label">Bạn chọn:</span>
-                            <span class="answer-value">${userAnswer}</span>
+                            <span>Bạn chọn:</span>
+                            <span>${userAnswer}</span>
                         </div>
                         <div class="correct-answer">
-                            <span class="answer-label">Đáp án đúng:</span>
-                            <span class="answer-value">${correctAnswer}</span>
+                            <span>Đáp án đúng:</span>
+                            <span>${correctAnswer}</span>
                         </div>
                     </div>
-                    <div class="question-number">
-                        <i class="fas fa-question-circle"></i>
-                        Câu ${i}:
-                    </div>
-                    <div class="question-text">${questionData.question}</div>
                     <div class="options-container">
-                        ${questionData.options.map((option, index) => {
-                            const letter = String.fromCharCode(65 + index);
-                            let optionClass = 'review-option';
+                        ${['A', 'B', 'C', 'D'].map((letter, index) => {
+                            let optionClass = 'review-option option';
                             if (letter === userAnswer) optionClass += ' user-selected';
                             if (letter === correctAnswer) optionClass += ' correct-answer';
                             
                             return `
                                 <div class="${optionClass}">
                                     <div class="option-letter">${letter}</div>
-                                    <div class="option-text">${option}</div>
+                                    <div class="option-text">${options[i-1][index]}</div>
                                 </div>
                             `;
                         }).join('')}
@@ -1173,75 +915,43 @@
             }
         }
 
-        // Back to exam button
+        // Navigation
         document.getElementById('backToExam').addEventListener('click', () => {
             document.getElementById('reviewScreen').style.display = 'none';
-            document.getElementById('examScreen').style.display = 'flex';
+            document.getElementById('examScreen').style.display = 'block';
         });
 
-        // Review exam button
         document.getElementById('reviewExam').addEventListener('click', () => {
-            // Calculate score
             let score = 0;
             for (let i = 1; i <= 40; i++) {
                 if (userAnswers[i] === correctAnswers[i]) {
                     score++;
                 }
             }
-            
             showReviewScreen(score);
         });
 
-        // Reset exam buttons
+        // Reset exam
         document.getElementById('resetExam').addEventListener('click', resetExam);
         document.getElementById('resetFromReview').addEventListener('click', resetExam);
         
         function resetExam() {
-            if (!confirm('Bạn có chắc chắn muốn làm lại bài thi? Tất cả câu trả lời sẽ bị xóa.')) {
+            if (!confirm('Bạn có chắc chắn muốn làm lại bài thi?')) {
                 return;
             }
             
-            // Reset timer
             timeLeft = 20 * 60;
             clearInterval(timerInterval);
             
-            // Reset UI
             document.getElementById('reviewScreen').style.display = 'none';
-            document.getElementById('examScreen').style.display = 'flex';
+            document.getElementById('examScreen').style.display = 'block';
             
-            // Reinitialize exam
             initializeExam();
             startTimer();
         }
 
         // Initialize on load
         document.addEventListener('DOMContentLoaded', () => {
-            // Add CSS for option animations
-            const style = document.createElement('style');
-            style.textContent = `
-                .option {
-                    position: relative;
-                    overflow: hidden;
-                }
-                
-                .option::after {
-                    content: '';
-                    position: absolute;
-                    top: 0;
-                    left: -100%;
-                    width: 100%;
-                    height: 100%;
-                    background: linear-gradient(90deg, transparent, rgba(0, 229, 255, 0.1), transparent);
-                    transition: left 0.7s;
-                }
-                
-                .option:hover::after {
-                    left: 100%;
-                }
-            `;
-            document.head.appendChild(style);
-            
-            // Focus on password input
             passwordInput.focus();
         });
     </script>
